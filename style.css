@@ -1,0 +1,94 @@
+:root {
+	color-scheme: light;
+	font-family: Arial, sans-serif;
+	color: black;
+	background-color: whitesmoke;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	width: min(1000px, calc(100% - 40px));
+	min-height: 100vh;
+	margin: 0 auto;
+	padding: 32px 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		"title title"
+		"subtitle subtitle"
+		"cover lyrics";
+	gap: 16px 32px;
+}
+
+h1,
+h2 {
+	margin: 0;
+}
+
+h1 {
+	grid-area: title;
+	margin-top: 8px;
+	font-size: 36px;
+	text-align: center;
+}
+
+h2 {
+	grid-area: subtitle;
+	margin-bottom: 8px;
+	color: darkred;
+	font-size: 18px;
+	font-weight: 400;
+	text-align: center;
+}
+
+img {
+	grid-area: cover;
+	display: block;
+	width: 100%;
+	height: auto;
+	max-width: 450px;
+	margin: 0 auto;
+}
+
+div {
+	grid-area: lyrics;
+	min-width: 0;
+	padding: 16px;
+	border: 1px solid lightgray;
+	background-color: white;
+}
+
+p {
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.7;
+}
+
+@media (max-width: 720px) {
+	body {
+		width: min(100% - 32px, 540px);
+		padding: 24px 0;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"title"
+			"subtitle"
+			"cover"
+			"lyrics";
+		gap: 12px;
+	}
+
+	h1 {
+		font-size: 30px;
+	}
+
+	h2 {
+		margin-bottom: 4px;
+	}
+
+	img {
+		width: 100%;
+	}
+}
